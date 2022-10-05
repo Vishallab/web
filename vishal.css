@@ -1,0 +1,216 @@
+html,body,div,p,h1,h2,h3,h4,h5,h6,
+ul,ol,li,dl,dt,dd,form,fieldset,caption,legend,
+table,tr,td,th,address,blockquote,img {
+	margin:0;
+	padding:0;
+}
+
+img, fieldset {
+	border:none;
+}
+
+blockquote, q {
+	quotes:none;
+}
+
+body *, *:after, *:before {
+	box-sizing:border-box;
+}
+
+button, summary {
+	cursor:pointer;
+}
+
+html, body {
+	height:100%;
+}
+
+body, button, input, table, textarea, select {
+	font-size:1em;
+	line-height:1.2;
+	font-family:inherit;
+}
+
+body {
+
+	--contentBgColor:#FFF;
+	--chromeColor:#354;
+	--chromeColorAlt:#FFF;
+	--chromeColorHover:#143;
+	--flowColor:#354;
+	--flowFont:poppins,sans-serif;
+	--headingColor:#032;
+	--highlightFont:fraunces,serif;
+	--mainBgColor:#F2E9E2;
+	--strongColor:#476;
+
+	display:flex;
+	flex-direction:column;
+	font-family:var(--flowFont);
+	color:var(--flowColor);
+}
+
+h1,
+h2 {
+	color:var(--headingColor);
+	letter-spacing:0.03125em;
+	font-family:var(--highlightFont);
+	font-size:2em;
+}
+
+h1 {
+	flex:0 0 auto;
+	padding:0.5rem 1rem;
+	text-align:center;
+	background:#D0D8E0;
+	border-bottom:1px solid var(--headingColor);
+}
+
+p {
+	margin-bottom:1.5em;
+	line-height:1.5;
+}
+
+main,
+.productCard {
+	display:flex;
+	justify-content:center;
+}
+
+main {
+	align-items:center;
+	flex-grow:1;
+	padding:1em 0.5em;
+	background:var(--mainBgColor);
+}
+
+.productCard {
+	flex-direction:column;
+	width:100%;
+	max-width:38em;
+	min-height:28.5em;
+	padding:1.5em 1.5em 1.5em 20.5em;
+	background:
+		var(--contentBgColor)
+		var(--bgImageLarge)
+		center left no-repeat;
+	background-size:19em auto;
+	border-radius:0.5rem;
+}
+
+.productCard > * {
+	flex-grow:0;
+}
+
+.productCard header > span {
+	font-size:0.875em;
+	text-transform:uppercase;
+	letter-spacing:0.25em;
+}
+
+.productCard header h2 {
+	margin:1rem 0;
+}
+
+.productCard > p:last-of-type {
+	flex-grow:1;
+}
+
+.productCard footer {
+	display:flex;
+	flex-wrap:wrap;
+}
+
+.productCard footer strong,
+.productCard footer span {
+	font-family:var(--highlightFont);
+}
+
+.productCard footer strong {
+	font-size:2em;
+	color:var(--strongColor);
+}
+
+.productCard footer span {
+	flex-grow:1;
+	padding:0.6em 0.25em;
+	text-align:right;
+}
+
+.productCard footer a {
+	width:100%;
+	padding:0.75em;
+	margin-top:1em;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:none;
+	border-radius:0.5em;
+	background:var(--chromeColor);
+	color:var(--chromeColorAlt);
+	transition:background 0.3s;
+}
+
+.productCard footer a:focus,
+.productCard footer a:hover {
+	background:var(--chromeColorHover);
+}
+
+.productCard footer a:before {
+	content:"";
+	display:inline-block;
+	width:1em;
+	height:1em;
+	margin:0.1em 0.5em 0 0;
+	vertical-align:top;
+	background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z' fill='%23FFF'/%3E%3C/svg%3E");
+	background-size:cover;
+}
+
+@media (max-width:40em) {
+
+	h2 span {
+		display:inline-block;
+	}
+	
+	main {
+		display:block;
+		padding:0;
+	}
+
+	.productCard {
+		max-width:none;
+		min-height:0;
+		padding:1em;
+		text-align:center;
+		background-image:none;
+		border-bottom:1px solid var(--headingColor);
+		border-radius:0;
+	}
+
+	.productCard header:after {
+		content:"";
+		display:block;
+		width:12em;
+		height:10em;
+		margin:1.5em auto;
+		background:var(--bgImageSmall) top center no-repeat;
+		background-size:cover;
+		background-color:#000;
+		border-radius:0.5em;
+	}
+
+	.productCard footer strong,
+	.productCard footer span {
+		flex-grow:1;
+		text-align:center;
+	}
+	
+	.productCard footer a {
+		margin-top:1.5rem;
+	}
+
+	.productCard header h2 {
+		margin-top:0.25rem;
+	}
+
+} /* (max-width:40em) */
